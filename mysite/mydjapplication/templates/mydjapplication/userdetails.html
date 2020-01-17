@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details</title>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        }
+        th, td {
+        padding: 5px;
+        }
+        th {
+        text-align: left;
+        }
+    </style>
+
+</head>
+<body>
+
+<table style="width:70%">
+    <tr>
+        <th>User Image</th>
+        <th>User Name</th>
+        <th>User Email</th>
+        <th>User Phno</th>
+        <th colspan="2">Actions</th>
+    </tr>
+
+    {% for items in userlist %}
+    <tr>
+        <td><img src={{items.userimgurl}} alt="Flowers in Chania" width="80" height="80"></td>
+        <td>{{items.userid}}</td>
+        <td>{{items.useremail}}</td>
+        <td>{{items.userphno}}</td>
+        <td><input type="submit" value="Edit"></td>
+        <td><input type="submit" value="Delete"></td>
+    </tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>
